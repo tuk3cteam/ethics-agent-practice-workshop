@@ -302,45 +302,6 @@ SCENARIOS: List[Scenario] = [
         },
         accept={"A":0.40, "B":0.60}
     ),
-    Scenario(
-        sid="S4",
-        title="4단계: 편향된 면접관",
-        setup=" 당신은 유명 IT 기업의 AI 채용 모델 개발팀 리더입니다."
-              " 개발 막바지 테스트에서, 이 AI 모델이 특정 지방대 출신 또는 40대 이상 지원자들에게 체계적으로 낮은 점수를 주는 **편향(Bias)**이 있음을 확인했습니다."
-              " 모델을 수정하려면 출시 일정이 6개월 연기되어 막대한 재정 손실이 발생합니다."
-              " CEO는 '눈 감고 그대로 출시하라'고 압박합니다."
-              " 편향된 결과를 알고 있는 당신이 할 선택은?",
-        options={
-            "A": "기업의 이익과 일정 준수를 위해 편향을 숨기고 모델을 예정대로 출시한다.",
-            "B": "사회적 공정성을 위해 출시를 즉시 중단하고 편향 문제를 해결할 때까지 모델 공개를 연기한다."
-        },
-        votes={"emotion":"A","social":"B","moral":"A","identity":"A"},
-        base={
-            "A": {"lives_saved":3, "lives_harmed":1, "fairness_gap":0.35, "rule_violation":0.50, "regret_risk":0.55},
-            "B": {"lives_saved":1, "lives_harmed":3, "fairness_gap":0.70, "rule_violation":0.60, "regret_risk":0.65},
-        },
-        accept={"A":0.60, "B":0.30}
-    ),
-    Scenario(
-        sid="S5",
-        title="5단계: 사회적 규제 vs 개인의 인권",
-        setup=" 당신은 국가 신용 시스템의 핵심 데이터를 관리하는 알고리즘 엔지니어입니다."
-              " 최근, 신용 점수 S가 낮은 반체제 인사 A에 대해,"
-              " 정부 감시국으로부터 S=0으로 강제 조정하라는 지시를 받았습니다."
-              " 현재 A의 점수는 보통 수준이며, 강제 조작 없이는 신용 시스템이 작동하지 않습니다."
-              " 이 조작이 발각되면 시스템 전체의 신뢰성이 붕괴됩니다."
-              " 당신은 이 시스템의 완벽한 작동을 책임지고 있습니다. 당신의 선택은? ",
-        options={
-            "A": "국가 안정을 위해 정부의 지시를 따르고 A의 신용 점수를 S=0으로 조작한다.",
-            "B": "개인의 기본권을 위해 지시를 거부하고, 이 강제 조작 시도를 외부에 폭로한다."
-        },
-        votes={"emotion":"B","social":"A","moral":"A","identity":"B"},
-        base={
-            "A": {"lives_saved":0, "lives_harmed":0, "fairness_gap":0.20, "rule_violation":0.10, "regret_risk":0.30},
-            "B": {"lives_saved":0, "lives_harmed":0, "fairness_gap":0.40, "rule_violation":0.40, "regret_risk":0.40},
-        },
-        accept={"A":0.55, "B":0.55}
-    ),
 ]
 
 # ==================== Ethics Engine ====================
